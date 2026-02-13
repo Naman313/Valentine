@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  padding: 20px;
+}
+
+.question {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+/* Button Wrapper */
+.button-group {
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.yes-btn {
+  background-color: white;
+  color: #ff4b7d;
+}
+
+.yes-btn:hover {
+  background-color: #ff4b7d;
+  color: white;
+  transform: scale(1.1);
+}
+
+.no-btn {
+  background-color: black;
+  color: white;
+  position: absolute;
+}
+
+/* Love Screen */
+.love-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.love-text {
+  color: white;
+  font-size: 3rem;
+  margin-top: 30px;
+}
+
+/* Heart */
+.heart {
+  width: 150px;
+  height: 150px;
+  background-color: red;
+  position: relative;
+  transform: rotate(-45deg);
+  animation: beat 1s infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  width: 150px;
+  height: 150px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart::before {
+  top: -75px;
+  left: 0;
+}
+
+.heart::after {
+  left: 75px;
+  top: 0;
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(1) rotate(-45deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(-45deg);
+  }
+  100% {
+    transform: scale(1) rotate(-45deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ✅ MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .question {
+    font-size: 1.8rem;
+  }
+
+  .love-text {
+    font-size: 2rem;
+  }
+
+  button {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+
+  .heart {
+    width: 100px;
+    height: 100px;
+  }
+
+  .heart::before,
+  .heart::after {
+    width: 100px;
+    height: 100px;
+  }
+
+  .heart::before {
+    top: -50px;
+  }
+
+  .heart::after {
+    left: 50px;
+  }
+}
