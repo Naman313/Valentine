@@ -28,13 +28,14 @@ function App() {
             Yes 💖
           </button>
 
-          <button
-            className="no-btn"
-            style={{ top: noPosition.top, left: noPosition.left }}
-            onMouseEnter={moveNoButton}
-          >
-            No 😜
-          </button>
+         <button
+  className="no-btn"
+  style={{ top: noPosition.top, left: noPosition.left }}
+  onMouseEnter={moveNoButton}   // Desktop
+  onClick={moveNoButton}        // Mobile
+>
+  No 😜
+</button>
         </>
       ) : (
         <div className="love-container">
